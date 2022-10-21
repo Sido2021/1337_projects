@@ -6,7 +6,7 @@
 /*   By: sbelyama <sbelyama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 18:44:20 by sbelyama          #+#    #+#             */
-/*   Updated: 2022/10/21 11:48:06 by sbelyama         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:34:19 by sbelyama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,16 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return (0);
 	if (!*needle)
 		return ((char *)haystack);
-	while (*haystack && i < len)
+	while (haystack[i] && i < len)
 	{
 		if (haystack[k] == needle[j++] && k++ < len)
 		{
 			if (!needle[j])
-				return ((char *)haystack);
+				return ((char *)haystack + i);
 			continue ;
 		}
-		k = 0;
 		j = 0;
-		haystack++;
+		k = ++i;
 	}
 	return (0);
 }

@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbelyama <sbelyama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 18:44:20 by sbelyama          #+#    #+#             */
-/*   Updated: 2022/10/21 12:33:27 by sbelyama         ###   ########.fr       */
+/*   Created: 2022/10/22 20:26:36 by sbelyama          #+#    #+#             */
+/*   Updated: 2022/10/23 14:00:43 by sbelyama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	t_list	*tmp;
+	t_list	*new_lst;
+	void	*content;
 
-	i = 0;
-	j = 0;
-	k = 0;
-	if (!needle && !haystack && !len)
-		return ("");
-	if (!haystack && !len)
+	if (!lst)
 		return (0);
-	if (!*needle)
-		return ((char *)haystack);
-	while (haystack[i] && i < len)
+	tmp = lst;
+	new_lst = 0;
+	while (tmp)
 	{
-		if (haystack[k] == needle[j++] && k++ < len)
+		content = (*f)(tmp->content);
+		if (!new_lst)
 		{
-			if (!needle[j])
-				return ((char *)haystack + i);
-			continue ;
+			new_lst = ft_lstnew(content);
+			if (!new_lst)
+			{
+				del(content);
+				return (0);
+			}
 		}
-		j = 0;
-		k = ++i;
+		else
+			ft_lstadd_back(&new_lst, ft_lstnew(content));
+		tmp = tmp->next;
 	}
-	return (0);
+	return (new_lst);
 }

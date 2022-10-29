@@ -6,13 +6,13 @@
 /*   By: sbelyama <sbelyama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 20:04:32 by sbelyama          #+#    #+#             */
-/*   Updated: 2022/10/18 20:11:16 by sbelyama         ###   ########.fr       */
+/*   Updated: 2022/10/29 00:38:48 by sbelyama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_index(char *str, char *set, size_t index, int forward)
+static int	get_index(char *str, char *set, size_t index, int forward)
 {
 	while (((str[index] && forward) || (!forward && index > 0))
 		&& ft_strchr(set, str[index]))

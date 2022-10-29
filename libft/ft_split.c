@@ -6,7 +6,7 @@
 /*   By: sbelyama <sbelyama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 20:11:55 by sbelyama          #+#    #+#             */
-/*   Updated: 2022/10/19 15:41:05 by sbelyama         ###   ########.fr       */
+/*   Updated: 2022/10/29 00:38:22 by sbelyama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	get_words_count(char *s, char c, size_t *count)
 			(*count)++;
 }
 
-void	fill_array(char **strings, char *s, char c, int count)
+static void	fill_array(char **strings, char *s, char c, int count)
 {
 	size_t	len;
 	int		j;

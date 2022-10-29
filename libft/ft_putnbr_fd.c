@@ -6,13 +6,13 @@
 /*   By: sbelyama <sbelyama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 21:17:46 by sbelyama          #+#    #+#             */
-/*   Updated: 2022/10/19 12:15:34 by sbelyama         ###   ########.fr       */
+/*   Updated: 2022/10/29 00:38:06 by sbelyama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	write_number(long n, int fd)
+static void	write_number(long n, int fd)
 {
 	if (n < 0)
 	{

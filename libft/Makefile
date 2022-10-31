@@ -13,7 +13,7 @@ BOBJS		= ${BSRCS:.c=.o}
 
 NAME		= libft.a
 
-DELCMD			= rm -f
+DELCMD		= rm -f
 
 MAKELIB		= ar rcs
 

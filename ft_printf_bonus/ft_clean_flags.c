@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_nchar.c                                     :+:      :+:    :+:   */
+/*   ft_clean_flags.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbelyama <sbelyama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 19:57:46 by sbelyama          #+#    #+#             */
-/*   Updated: 2022/11/19 19:58:16 by sbelyama         ###   ########.fr       */
+/*   Created: 2022/11/14 17:59:54 by sbelyama          #+#    #+#             */
+/*   Updated: 2022/11/14 18:00:10 by sbelyama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_put_nchar(char c, int n)
+void	ft_clean_flags(int *flags)
 {
 	int	i;
 
 	i = 0;
-	while (n-- > 0 && ++i)
-		ft_put_char(c);
-	return (i);
+	while (i < 7)
+		flags[i++] = -1;
 }

@@ -1,19 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_reset_flag.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sbelyama <sbelyama@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/19 19:58:52 by sbelyama          #+#    #+#             */
+/*   Updated: 2022/11/19 19:59:06 by sbelyama         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-void ft_reset_flag(int *flags, char flag)
+void	ft_reset_flag(int *flags, char flag)
 {
-	if(flag == '-' )
-		flags[1] = -1;
-	else if(flag == '0' )
-		flags[2] = -1;
-	else if(flag == '.')
-		flags[3] = -1;
-	else if(flag == '#' )
-		flags[4] = -1;
-	else if(flag == ' ' )
-		flags[5] = -1;
-	else if(flag == '+')
-		flags[6] = -1;
-	else
-		flags[0] = -1;
+	flags[ft_get_flag_index(flag)] = -1;
 }

@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_nchar.c                                     :+:      :+:    :+:   */
+/*   ft_malloc_plus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbelyama <sbelyama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 19:57:46 by sbelyama          #+#    #+#             */
-/*   Updated: 2022/11/19 19:58:16 by sbelyama         ###   ########.fr       */
+/*   Created: 2022/11/19 20:00:09 by sbelyama          #+#    #+#             */
+/*   Updated: 2022/11/19 20:00:51 by sbelyama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_put_nchar(char c, int n)
+char	*ft_malloc_plus(int len)
 {
-	int	i;
+	char	*s;
 
-	i = 0;
-	while (n-- > 0 && ++i)
-		ft_put_char(c);
-	return (i);
+	s = malloc(len);
+	if (s && len > 0)
+		s[len - 1] = 0;
+	return (s);
 }

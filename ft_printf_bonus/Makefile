@@ -30,8 +30,6 @@ ${NAME}:	${OBJS}
 %.o:		%.c
 			${CC} ${CFLAGS}  -c $< -o $@
 
-run:		
-			${CC} main.c ${NAME} && ./a.out
 clean:
 			${DELCMD} ${OBJS} ${BOBJS}
 

@@ -40,4 +40,6 @@ bonus:		all
 
 re:			fclean all
 
+run:
+	gcc main.c ${NAME} && ./a.out
 .PHONY: 	all clean fclean re bonus

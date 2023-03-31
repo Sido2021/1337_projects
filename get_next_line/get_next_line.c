@@ -6,7 +6,7 @@
 /*   By: sbelyama <sbelyama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 19:23:56 by sbelyama          #+#    #+#             */
-/*   Updated: 2022/12/22 14:21:22 by sbelyama         ###   ########.fr       */
+/*   Updated: 2022/12/25 12:00:18 by sbelyama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,8 +128,8 @@ char	*get_next_line(int fd)
 		free(remainder);
 		remainder = 0;
 	}
-	if (BUFFER_SIZE < 1000)
-		extra_space = 1000 - BUFFER_SIZE;
+	if (BUFFER_SIZE < 100000)
+		extra_space = 100000 - BUFFER_SIZE;
 	if (!ft_strchr(s, '\n'))
 		read_line(fd, &s, extra_space);
 	check_line(&s, &remainder);
